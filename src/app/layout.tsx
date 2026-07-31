@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
@@ -10,17 +10,18 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 export const metadata: Metadata = {
   title: "Arush Mehta | Portfolio",
   description: "CS student @ VIT Vellore | Building AI tools & data pipelines",
-  colorScheme: "dark light",
   openGraph: {
     title: "Arush Mehta | Portfolio",
     description: "CS student @ VIT Vellore | Building AI tools & data pipelines",
     images: [{ url: "/api/placeholder/1200/630" }],
   },
   other: {
-    // Tells Dark Reader this page manages its own color scheme — stops it
-    // from injecting data-darkreader-* attributes that cause hydration mismatches.
     "darkreader-lock": "",
   },
+};
+
+export const viewport: Viewport = {
+  colorScheme: "dark light",
 };
 
 export default function RootLayout({
