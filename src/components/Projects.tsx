@@ -14,10 +14,17 @@ function FeaturedProjectCard({ project }: { project: Project }) {
       <div className="h-1 w-full" style={{ background: `linear-gradient(90deg, var(--color-accent), transparent)` }} />
       <div className="p-8">
         <div className="flex items-center justify-between mb-4">
-          <span className="text-xs font-bold tracking-widest uppercase px-2 py-1 rounded-md"
-            style={{ color: "var(--color-accent)", background: "var(--color-accent-muted)" }}>
-            ★ Featured Project
-          </span>
+          <div className="flex flex-col gap-2">
+            <span className="text-xs font-bold tracking-widest uppercase px-2 py-1 rounded-md w-fit"
+              style={{ color: "var(--color-accent)", background: "var(--color-accent-muted)" }}>
+              ★ Featured Project
+            </span>
+            {project.company && (
+              <span className="text-xs font-medium text-neutral-500 dark:text-neutral-400 tracking-wide">
+                🏢 {project.company}
+              </span>
+            )}
+          </div>
           <div className="flex gap-3">
             {project.githubUrl && (
               <Link href={project.githubUrl} target="_blank"
@@ -83,6 +90,14 @@ function StandardProjectCard({ project }: { project: Project }) {
               <FaGithub className="w-4 h-4" />
             </Link>
           )}
+          {project.liveUrl && (
+            <Link href={project.liveUrl} target="_blank"
+              className="text-neutral-500 transition-colors"
+              onMouseEnter={e => (e.currentTarget.style.color = "var(--color-accent)")}
+              onMouseLeave={e => (e.currentTarget.style.color = "")}>
+              <ExternalLink className="w-4 h-4" />
+            </Link>
+          )}
         </div>
       </div>
       <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-6 flex-grow">
@@ -90,7 +105,8 @@ function StandardProjectCard({ project }: { project: Project }) {
       </p>
       <div className="flex flex-wrap gap-2 mt-auto">
         {project.tags.map((tag) => (
-          <span key={tag} className="px-2 py-1 text-xs font-medium rounded-md bg-neutral-100 dark:bg-neutral-900 text-neutral-600 dark:text-neutral-400">
+          <span key={tag} className="px-2 py-1 text-xs font-medium rounded-md border"
+            style={{ color: "var(--color-accent)", borderColor: "var(--color-accent-muted)", background: "var(--color-accent-muted)" }}>
             {tag}
           </span>
         ))}
@@ -98,6 +114,17 @@ function StandardProjectCard({ project }: { project: Project }) {
     </div>
   );
 }
+
+function ComingSoonCard() {
+  return (
+    <div className="group relative rounded-xl p-6 border-2 border-dashed border-neutral-300 dark:border-neutral-700 flex flex-col items-center justify-center h-full min-h-[180px] text-center transition-all duration-200 hover:border-[var(--color-accent)]">
+      <span className="text-3xl mb-3">🚧</span>
+      <h4 className="text-base font-bold text-neutral-400 dark:text-neutral-500 mb-1">Next Project</h4>
+      <p className="text-xs text-neutral-400 dark:text-neutral-600">Coming soon — stay tuned.</p>
+    </div>
+  );
+}
+
 
 export function Projects() {
   const featured = projectsData.filter(p => p.status === "Featured");
@@ -120,9 +147,13 @@ export function Projects() {
             ))}
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {standard.map(project => (
-              <StandardProjectCard key={project.id} project={project} />
-            ))}
+            {standard.map(project =>
+              project.status === "Coming Soon" ? (
+                <ComingSoonCard key={project.id} />
+              ) : (
+                <StandardProjectCard key={project.id} project={project} />
+              )
+            )}
           </div>
         </div>
       </motion.div>

@@ -33,11 +33,11 @@ export const projectsData: Project[] = [
   },
   {
     id: "pulse-ai-news",
-    title: "Pulse AI",
-    status: "Completed",
+    title: "Pulse AI — India Edition",
+    status: "In Progress",
     description:
-      "A premium, real-time tech news feed powered by The Guardian API. Browse the latest stories across companies, regions, and topics in a sleek dark-mode interface — with live filtering, AI insight cards, sort controls, bookmarks, and skeleton-loader polish.",
-    tags: ["Next.js", "The Guardian API", "TypeScript", "Vercel"],
+      "A premium, real-time India-centric tech and business news feed powered by The Guardian Open Platform. Tracks Indian companies (Tata, Reliance, Infosys, Zomato), cities, and topics like ISRO, Fintech & UPI, and AI in India — all contextually scoped so 'AI' returns Indian AI news, not global.",
+    tags: ["Next.js 16", "TypeScript", "The Guardian API", "Vanilla CSS", "Vercel"],
     githubUrl: "https://github.com/doomsday-the/pules-ai",
     liveUrl: "https://pulse-ai-khaki.vercel.app",
   },
