@@ -35,11 +35,14 @@ export const projectsData: Project[] = [
     githubUrl: "#"
   },
   {
-    id: "ytp-video-generator",
-    title: "YTP Video Generator",
-    status: "Completed",
-    description: "Creative-technical experiment building a YTP-style video generator.",
-    tags: ["Python", "Pillow", "NumPy", "FFmpeg"],
-    githubUrl: "#"
+    id: "project-genesis",
+    title: "Project Genesis",
+    status: "In Progress",
+    description: "An AI-first Personal Media Companion. Instead of a static tracker, it's a conversational AI that remembers your taste, builds a 'Taste DNA' profile, and delivers explainable recommendations — powered by a multi-tiered memory engine and event-sourced architecture.",
+    problem: "Media tracking apps like MAL and Letterboxd record data, not taste. They can't remember *why* you rated something, or understand your nuanced, idiosyncratic preferences.",
+    approach: "Built an AI agent at the core that uses tool calling to operate the app. A dedicated Memory Engine (Working, Semantic, Taste tiers) gives the AI persistent, structured memory across conversations.",
+    technicalSol: "Next.js App Router + Vercel AI SDK for full-stack TypeScript and streaming. PostgreSQL with pgvector for hybrid semantic search. Event sourcing for reconstructing Taste DNA. Computed recommendation engine — math, not LLM magic.",
+    tags: ["Next.js", "TypeScript", "Vercel AI SDK", "PostgreSQL", "pgvector", "Gemini"],
+    githubUrl: "https://github.com/doomsday-the/Project-Genesis"
   }
 ];
