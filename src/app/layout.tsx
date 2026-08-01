@@ -32,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
       <body className={`${inter.variable} font-sans antialiased selection:bg-neutral-200 dark:selection:bg-neutral-800`}>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+        <ThemeProvider>
           <Navbar />
           <main className="max-w-5xl mx-auto px-6 pt-16">
             {children}
