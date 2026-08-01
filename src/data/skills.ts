@@ -6,7 +6,9 @@ export const skillsData = {
 };
 
 export const currentlyLearning = [
-  "Algorithms & Complexity Theory",
-  "Theory of Computation",
-  "Applied AI & Data Engineering"
+  "Data Structures & Algorithms",
+  "Database Management Systems (DBMS)",
+  "MongoDB & the MERN Stack",
+  "RAG Pipelines & Vector Search",
+  "AWS Cloud & Deployment",
 ];
