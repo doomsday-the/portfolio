@@ -7,7 +7,7 @@ export const skillsData = {
 
 export const currentlyLearning = [
   "Data Structures & Algorithms",
-  "Database Management Systems (DBMS)",
+  "Database Management Systems",
   "MongoDB & the MERN Stack",
   "RAG Pipelines & Vector Search",
   "AWS Cloud & Deployment",
