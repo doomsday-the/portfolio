@@ -1,7 +1,8 @@
 export const skillsData = {
-  "Languages": ["Python", "TypeScript", "JavaScript", "SQL", "C++", "HTML/CSS"],
-  "Frameworks & Tools": ["Next.js", "React", "FastAPI", "Tailwind CSS", "Git", "Streamlit"],
-  "Data & AI": ["PostgreSQL", "NumPy", "Gemini API", "Power BI", "Pandas"],
+  "Languages": ["Python", "Java", "JavaScript", "SQL", "C++", "HTML/CSS"],
+  "Frameworks": ["Next.js", "React", "FastAPI", "Streamlit", "Tailwind CSS"],
+  "Tools": ["Git", "GitHub", "Power BI", "Vercel", "VS Code"],
+  "Data & AI": ["PostgreSQL", "NumPy", "Gemini API", "Pandas", "SQLite"],
 };
 
 export const currentlyLearning = [
