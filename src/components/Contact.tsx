@@ -2,8 +2,8 @@
 
 import { motion } from "framer-motion";
 import { profileData } from "@/data/profile";
-import { Mail } from "lucide-react";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { Mail, Phone } from "lucide-react";
+import { FaGithub } from "react-icons/fa";
 import Link from "next/link";
 
 export function Contact() {
@@ -38,12 +38,10 @@ export function Contact() {
             <FaGithub className="w-6 h-6" />
           </Link>
           <Link
-            href={profileData.links.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={profileData.links.phone!}
             className="p-3 text-neutral-600 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100 transition-colors"
           >
-            <FaLinkedin className="w-6 h-6" />
+            <Phone className="w-6 h-6" />
           </Link>
         </div>
       </motion.div>
