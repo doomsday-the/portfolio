@@ -2,8 +2,8 @@
 
 import { motion } from "framer-motion";
 import { profileData } from "@/data/profile";
-import { Mail, FileText } from "lucide-react";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { Mail, FileText, Phone } from "lucide-react";
+import { FaGithub } from "react-icons/fa";
 import Link from "next/link";
 
 export function Hero() {
@@ -41,13 +41,11 @@ export function Hero() {
             <FaGithub className="w-5 h-5 text-neutral-700 dark:text-neutral-300 group-hover:text-[var(--color-accent)] transition-colors" />
           </Link>
           <Link
-            href={profileData.links.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={profileData.links.phone!}
             className="p-3 bg-neutral-100 hover:bg-neutral-200 dark:bg-neutral-900 dark:hover:bg-neutral-800 rounded-full transition-colors group"
-            aria-label="LinkedIn"
+            aria-label="Phone"
           >
-            <FaLinkedin className="w-5 h-5 text-neutral-700 dark:text-neutral-300 group-hover:text-[var(--color-accent)] transition-colors" />
+            <Phone className="w-5 h-5 text-neutral-700 dark:text-neutral-300 group-hover:text-[var(--color-accent)] transition-colors" />
           </Link>
           <Link
             href={profileData.links.email}
