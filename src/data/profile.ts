@@ -7,6 +7,6 @@ export const profileData = {
     github: "https://github.com/doomsday-the",
     email: "mailto:arushmehta1509@gmail.com",
     phone: "tel:+917480870348",
-    resume: "/resume.pdf",
+    resume: "https://arush-resume.vercel.app",
   },
 };
