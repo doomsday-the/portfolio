@@ -19,38 +19,48 @@ export const projectsData: Project[] = [
     title: "Tata Steel IoT Intelligence Dashboard",
     status: "Featured",
     company: "Tata Steel — Summer Internship",
-    description: "A full-stack industrial IoT chatbot dashboard for a simulated Tata Steel-like factory environment. Ask natural language questions about welding, gas cutting, and cladding operations — the AI generates SQL, queries the database, and returns a human-friendly answer.",
-    problem: "Factory engineers needed real-time, plain-English insights from dense industrial telemetry data without writing SQL or switching between multiple tools.",
-    approach: "Built a NL-to-SQL pipeline using Gemini to translate natural language questions into SQL queries against a live factory database, with results summarised back into a human-friendly answer.",
-    technicalSol: "Next.js 16 frontend with a FastAPI + SQLite backend deployed serverlessly on Vercel. Gemini handles both SQL generation and result narration. Read-only SELECT guard prevents any data mutation. SQL transparency panel lets users inspect the generated query.",
-    tags: ["Next.js", "FastAPI", "SQLite", "Gemini AI", "Python", "Vercel"],
+    description:
+      "A full-stack industrial IoT chatbot dashboard for a simulated Tata Steel-like factory environment. Ask natural language questions about welding, gas cutting, and cladding operations — the AI generates SQL, queries the database, and returns a human-friendly answer.",
+    problem:
+      "Factory engineers needed real-time, plain-English insights from dense industrial telemetry data — without writing SQL or jumping between dashboards.",
+    approach:
+      "Built a two-pass Gemini pipeline: the first call translates a natural language question into a safe, read-only SQL query; the second call narrates the raw results into a human-friendly answer. A live KPI dashboard and machine breakdown view sit alongside the chatbot.",
+    technicalSol:
+      "Next.js 16 (React 19) frontend with a FastAPI + SQLite backend, both deployed as serverless functions on Vercel. Gemini drives NL-to-SQL and result narration. A strict SELECT-only guard prevents mutation. SQL transparency panel lets users inspect every generated query. Animated stat cards, severity-coded deviation table, and quick-action chips complete the UX.",
+    tags: ["Next.js 16", "FastAPI", "SQLite", "Gemini AI", "Python", "Vercel"],
     githubUrl: "https://github.com/doomsday-the/factory-iot-chatbot",
     liveUrl: "https://chatbot-frontend-rho-ashen.vercel.app",
   },
   {
     id: "pulse-ai-news",
-    title: "Pulse",
-    status: "In Progress",
-    description: "Personalized AI news PWA tailored for the Indian market.",
-    tags: ["Next.js", "FastAPI", "PostgreSQL", "Gemini AI"],
-    githubUrl: "https://github.com/doomsday-the/pules-ai"
+    title: "Pulse AI",
+    status: "Completed",
+    description:
+      "A premium, real-time tech news feed powered by The Guardian API. Browse the latest stories across companies, regions, and topics in a sleek dark-mode interface — with live filtering, AI insight cards, sort controls, bookmarks, and skeleton-loader polish.",
+    tags: ["Next.js", "The Guardian API", "TypeScript", "Vercel"],
+    githubUrl: "https://github.com/doomsday-the/pules-ai",
+    liveUrl: "https://pulse-ai-khaki.vercel.app",
   },
   {
     id: "project-genesis",
     title: "Project Genesis",
     status: "In Progress",
-    description: "An AI-first Personal Media Companion. Instead of a static tracker, it's a conversational AI that remembers your taste, builds a 'Taste DNA' profile, and delivers explainable recommendations — powered by a multi-tiered memory engine and event-sourced architecture.",
-    problem: "Media tracking apps like MAL and Letterboxd record data, not taste. They can't remember *why* you rated something, or understand your nuanced, idiosyncratic preferences.",
-    approach: "Built an AI agent at the core that uses tool calling to operate the app. A dedicated Memory Engine (Working, Semantic, Taste tiers) gives the AI persistent, structured memory across conversations.",
-    technicalSol: "Next.js App Router + Vercel AI SDK for full-stack TypeScript and streaming. PostgreSQL with pgvector for hybrid semantic search. Event sourcing for reconstructing Taste DNA. Computed recommendation engine — math, not LLM magic.",
+    description:
+      "An AI-first Personal Media Companion. Instead of a static tracker, it's a conversational AI that remembers your taste, builds a 'Taste DNA' profile, and delivers explainable recommendations — powered by a multi-tiered memory engine and event-sourced architecture.",
+    problem:
+      "Media tracking apps like MAL and Letterboxd record data, not taste. They can't remember why you rated something, or understand your nuanced, evolving preferences over time.",
+    approach:
+      "The AI is the OS — it uses tool calling to operate the app (updating ratings, managing lists) while a dedicated Memory Engine with Working, Semantic, and Taste tiers gives it persistent, structured memory across conversations.",
+    technicalSol:
+      "Next.js App Router + Vercel AI SDK for full-stack TypeScript and LLM streaming. PostgreSQL with pgvector for hybrid semantic search. Event sourcing to reconstruct Taste DNA over time. Recommendation engine is algorithmically computed — math and weights, not LLM guesswork.",
     tags: ["Next.js", "TypeScript", "Vercel AI SDK", "PostgreSQL", "pgvector", "Gemini"],
-    githubUrl: "https://github.com/doomsday-the/Project-Genesis"
+    githubUrl: "https://github.com/doomsday-the/Project-Genesis",
   },
   {
     id: "coming-soon",
     title: "Coming Soon",
     status: "Coming Soon",
     description: "The next project is in the works. Check back soon.",
-    tags: []
-  }
+    tags: [],
+  },
 ];
