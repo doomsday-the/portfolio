@@ -1,8 +1,9 @@
 export type Project = {
   id: string;
   title: string;
-  status: "Featured" | "In Progress" | "Completed";
+  status: "Featured" | "In Progress" | "Completed" | "Coming Soon";
   description: string;
+  company?: string;
   problem?: string;
   approach?: string;
   technicalSol?: string;
@@ -15,16 +16,16 @@ export type Project = {
 export const projectsData: Project[] = [
   {
     id: "tata-steel-analytics",
-    title: "Industrial IoT Analytics Platform",
+    title: "Tata Steel IoT Intelligence Dashboard",
     status: "Featured",
-    description: "Built during Tata Steel internship. An analytics platform with Gemini-powered NL-to-SQL chatbot.",
-    problem: "Need for real-time insights from massive industrial IoT sensor data streams.",
-    approach: "Developed PostgreSQL analytics views, Power BI dashboards, and a natural language to SQL chatbot using Gemini and FastAPI.",
-    technicalSol: "Optimized complex SQL queries reducing dashboard load time significantly, and designed a robust Streamlit UI.",
-    tags: ["PostgreSQL", "Power BI", "FastAPI", "Streamlit", "Gemini AI"],
-    githubUrl: "#",
-    liveUrl: "#",
-    image: "/api/placeholder/800/400"
+    company: "Tata Steel — Summer Internship",
+    description: "A full-stack industrial IoT chatbot dashboard for a simulated Tata Steel-like factory environment. Ask natural language questions about welding, gas cutting, and cladding operations — the AI generates SQL, queries the database, and returns a human-friendly answer.",
+    problem: "Factory engineers needed real-time, plain-English insights from dense industrial telemetry data without writing SQL or switching between multiple tools.",
+    approach: "Built a NL-to-SQL pipeline using Gemini to translate natural language questions into SQL queries against a live factory database, with results summarised back into a human-friendly answer.",
+    technicalSol: "Next.js 16 frontend with a FastAPI + SQLite backend deployed serverlessly on Vercel. Gemini handles both SQL generation and result narration. Read-only SELECT guard prevents any data mutation. SQL transparency panel lets users inspect the generated query.",
+    tags: ["Next.js", "FastAPI", "SQLite", "Gemini AI", "Python", "Vercel"],
+    githubUrl: "https://github.com/doomsday-the/factory-iot-chatbot",
+    liveUrl: "https://chatbot-frontend-rho-ashen.vercel.app",
   },
   {
     id: "pulse-ai-news",
@@ -32,7 +33,7 @@ export const projectsData: Project[] = [
     status: "In Progress",
     description: "Personalized AI news PWA tailored for the Indian market.",
     tags: ["Next.js", "FastAPI", "PostgreSQL", "Gemini AI"],
-    githubUrl: "#"
+    githubUrl: "https://github.com/doomsday-the/pules-ai"
   },
   {
     id: "project-genesis",
@@ -44,5 +45,12 @@ export const projectsData: Project[] = [
     technicalSol: "Next.js App Router + Vercel AI SDK for full-stack TypeScript and streaming. PostgreSQL with pgvector for hybrid semantic search. Event sourcing for reconstructing Taste DNA. Computed recommendation engine — math, not LLM magic.",
     tags: ["Next.js", "TypeScript", "Vercel AI SDK", "PostgreSQL", "pgvector", "Gemini"],
     githubUrl: "https://github.com/doomsday-the/Project-Genesis"
+  },
+  {
+    id: "coming-soon",
+    title: "Coming Soon",
+    status: "Coming Soon",
+    description: "The next project is in the works. Check back soon.",
+    tags: []
   }
 ];
