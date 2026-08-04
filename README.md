@@ -3,7 +3,7 @@
 A fast, responsive, and minimalist personal portfolio built with Next.js (App Router), Tailwind CSS, and Framer Motion.
 Features dark mode by default and is fully data-driven via simple config files.
 
-**Live:** [arush-resume.vercel.app](https://arush-resume.vercel.app/) <!-- update if URL differs -->
+**Live:** [https://arush-mehta-portfolio.vercel.app/](https://arush-mehta-portfolio.vercel.app/) <!-- update if URL differs -->
 
 ## Tech Stack
 
